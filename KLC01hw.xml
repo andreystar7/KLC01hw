@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="1" x="1" y="1">
+  <block type="oled_cleardisplay" id="1" x="357" y="7">
     <next>
       <block type="oled_setcursor" id="2" inline="true">
         <value name="STARTX">
@@ -15,6 +15,45 @@
         <next>
           <block type="oled_drawtext" id="5">
             <field name="TEXT">Hello World</field>
+            <next>
+              <block type="movement_leftmotor" id="24" inline="true">
+                <value name="MOVLEFT">
+                  <block type="math_number" id="55">
+                    <field name="NUM">500</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="robot_delay" id="26" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="64">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="movement_rightmotor" id="36" inline="true">
+                        <value name="MOVRIGHT">
+                          <block type="math_number" id="65">
+                            <field name="NUM">500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="robot_delay" id="38" inline="true">
+                            <value name="DELAY">
+                              <block type="math_number" id="66">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="movement_stop" id="48"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>
